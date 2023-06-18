@@ -5,7 +5,7 @@ Primero tenemos la clase Pizza, esta clase tiene dos constructores, uno para pon
 Despues tenemos la clase bPiz. Que tiene un constructor default con el constructor por defecto de Pizzas. Despues tenemos setters que devuelven BPiz. Y por último tenemos el método build(), que devuelve el objeto del constructor.
 
 Se puede combinar con el factory
-
+```mermaid
     classDiagram
       Main "1" *-- "1..*" BuilderPizza : association
       class Main{
@@ -19,7 +19,7 @@ Se puede combinar con el factory
       class Pizzas{
         +Pizzas()
       }
-      
+  ```    
 
 ¿Cual es la función del patrón builder? + ¿Podríamos combinearlo con el patrón Factory? Con ejemplos
 El builder nos permite tener un constructor de una clase con muchos parametros y cambiarlos paso a paso. Esto permite que ese constructor tenga un objeto, permite producir diferentes tipos y representaciones de un objeto utilizando el mismo constructor.
@@ -35,7 +35,7 @@ Para hacer el builder del barco necesitaremos una clase Barco, con un constructo
 Después necesitaremos otra clase para el Builder. Esta clase tendría un atributo privado (private Barco _barcos) con un constructor (public Builder(){_barcos = new Barcos();}) y setters de los atributos que devolverían objeto de la clase Builder. Por último tendría un metodo que devuelve objeto tipo Barcos llamado build (retorna _barcos).
 
 De esta manera en el main podriamos hacer un constructor: Barcos barco = new Builder() y llamar a los setters si quisieramos cambiar un atributo, finalmente llamando al build para que returne objeto de tipo barco por ejemplo: .setCamas(2000).build(). De esta manera tendriamos el constructor por defecto de barcos pero con 2000 camas en vez de 1000
-
+```mermaid
     classDiagram
       Main "1" *-- "1..*" BuilderBarcos : association
       class Main{
@@ -73,4 +73,4 @@ De esta manera en el main podriamos hacer un constructor: Barcos barco = new Bui
       class CabinaPesquero{
         +cabinaPesquero()      
       }
-
+```
